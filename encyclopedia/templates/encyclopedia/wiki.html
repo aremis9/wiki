@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Wiki | {{ title }}
+{% endblock %}
+
+{% block body %}
+    
+    {% if entry %}
+        {{ entry | safe }}
+        <a href="/wiki/{{ title }}/edit" style="font-size: 0.9rem;">&#9998;    Edit Page</a>
+    {% else %}
+        <div style="color: rgb(231, 24, 24);">Page not found.</div>
+    {% endif %}
+{% endblock %}
